@@ -1,12 +1,19 @@
 import dotenv from "dotenv";
 import express from "express";
-import { getdb } from "./firebase.js";
+import firebaseDB from "./firebase.js";
 
 dotenv.config();
 
 const app = express();
-const port = process.env.SERVICE_PORT;
+/** for Nomal Hosting setUP */
+// const port = process.env.SERVICE_PORT;
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+app.get("/", function (req, res) {});
+
+/** for Nomal Hosting setUP */
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
+
+/** for FirebaseHosting service */
+exports.app = functions.https.onRequest(app);

@@ -15,19 +15,26 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_ID_MEASUREMENT,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const firebase = initializeApp(firebaseConfig);
+const db = getFirestore(firebase);
 
-async function db_get(group, category) {
-  const docRef = doc(db, group, category);
-  const docSnap = await getDoc(docRef);
-
-  if (docSnap.exists()) {
+/**
+ * firestore: it request await function
+ */
+class firebaseDB {
+  /**
+   * firebase db get
+   * @param {string} group what group want to db
+   * @param {string} category what content want to db
+   * @returns json data
+   */
+  async get(group, category) {
+    const docRef = doc(db, group, category);
+    const docSnap = await getDoc(docRef);
     return docSnap.data();
-  } else {
-    return none;
   }
 }
 
-export { db_get as getdb };
+console.log(await new firebaseDB().get("sunrincat", "feed"));
+
+export { firebaseDB };
