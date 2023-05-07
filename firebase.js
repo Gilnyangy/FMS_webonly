@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import dotenv from "dotenv";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 
 dotenv.config();
 
@@ -19,22 +19,30 @@ const firebase = initializeApp(firebaseConfig);
 const db = getFirestore(firebase);
 
 /**
- * firestore: it request await function
+ * firebase db get
+ * @param {string} group what group want to db
+ * @param {string} category what content want to db
+ * @returns json data
  */
-class firebaseDB {
-  /**
-   * firebase db get
-   * @param {string} group what group want to db
-   * @param {string} category what content want to db
-   * @returns json data
-   */
-  async get(group, category) {
-    const docRef = doc(db, group, category);
-    const docSnap = await getDoc(docRef);
-    return docSnap.data();
-  }
+async function get(group) {
+  const docRef = doc(db, group, "store", "test", "hOMDfxbd3L3iZmL2zMco");
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
 }
 
-console.log(await new firebaseDB().get("sunrincat", "feed"));
+/**
+ * firebase db get
+ * @param {string} group what group want to db
+ * @param {string} category what content want to db
+ * @param {json} update what content want to db
+ * @returns json data
+ */
+async function update(group, category, update) {
+  const docRef = doc(db, group, category);
+  await updateDoc(docRef, update);
+}
 
-export { firebaseDB };
+// await update("sunrincat", "feed", { "location.name": "당크" });
+console.log(await get("sunrincat"));
+
+export { get, update };
