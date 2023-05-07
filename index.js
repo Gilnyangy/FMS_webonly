@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
+import cookieParser from "cookie-parser";
 import manage from "./router/manage.js";
 
 dotenv.config();
@@ -7,6 +8,11 @@ dotenv.config();
 const app = express();
 /** for Nomal Hosting setUP */
 const port = process.env.SERVICE_PORT;
+
+app.set("view engine", "ejs");
+app.set("views", "./template");
+app.use(express.json());
+app.use(cookieParser());
 
 app.get("/", function (req, res) {
   res.status(200).send("Dev now");

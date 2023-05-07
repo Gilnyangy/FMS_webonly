@@ -3,8 +3,7 @@ import express from "express";
 const router = express.Router();
 
 router.get("/:group", function (req, res) {
-  var response = `그룹이름 : ${req.params.group}`;
-  res.status(200).send(response);
+  res.status(200).set("Content-Type", "text/html").render("manage", { Group: req.params.group });
 });
 
 export default router;
