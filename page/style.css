@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto&display=swap");
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-family: "Noto Sans KR";
+}
+
+.number {
+  font-family: "Roboto";
+}
+.infoText {
+  font-size: 10px;
+}
+div.load_box {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  padding: 10px;
+  display: inline-block;
+}
+div.load_box > img {
+  width: 48px;
+  height: 48px;
+}
