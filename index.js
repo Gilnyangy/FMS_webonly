@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.SERVICE_PORT;
 
 app.set("view engine", "ejs");
-app.set("views", "./template");
+app.set("views", "./page");
 app.use(express.json());
 app.use(cookieParser());
 
@@ -20,6 +20,7 @@ app.get("/", function (req, res) {
 
 /** Routing */
 app.use("/ico", express.static("file_icon"));
+app.use("/page", express.static("page"));
 app.use("/c", manage);
 
 /** for Nomal Hosting setUP */

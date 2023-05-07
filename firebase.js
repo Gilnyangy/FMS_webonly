@@ -21,28 +21,17 @@ const db = getFirestore(firebase);
 /**
  * firebase db get
  * @param {string} group what group want to db
- * @param {string} category what content want to db
  * @returns json data
  */
-async function get(group) {
-  const docRef = doc(db, group, "store", "test", "hOMDfxbd3L3iZmL2zMco");
+async function groupInfo(group) {
+  const docRef = doc(db, group, "master");
   const docSnap = await getDoc(docRef);
-  return docSnap.data();
+  return docSnap?.data();
+}
+async function feed(group) {
+  const docRef = doc(db, group, "master");
+  const docSnap = await getDoc(docRef);
+  return docSnap?.data();
 }
 
-/**
- * firebase db get
- * @param {string} group what group want to db
- * @param {string} category what content want to db
- * @param {json} update what content want to db
- * @returns json data
- */
-async function update(group, category, update) {
-  const docRef = doc(db, group, category);
-  await updateDoc(docRef, update);
-}
-
-// await update("sunrincat", "feed", { "location.name": "당크" });
-console.log(await get("sunrincat"));
-
-export { get, update };
+export { groupInfo };

@@ -4,6 +4,7 @@
   border: 0;
   margin: 0;
   font-family: "Noto Sans KR";
+  overflow: hidden;
 }
 
 .number {
@@ -22,4 +23,48 @@ div.load_box {
 div.load_box > img {
   width: 48px;
   height: 48px;
+}
+
+#catProfile {
+  width: 100vw;
+  height: 320px;
+  margin-top: 50px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.BigProfile {
+  width: 220px;
+  height: 320px;
+  background: #eee;
+  border-radius: 14px;
+  margin-left: 10px;
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
+}
+.BigProfile > img {
+  width: 160px;
+  height: 160px;
+  padding: 20px;
+  border-radius: 50%;
+}
+.BigProfile > div {
+  font-size: 24pt;
+  font-weight: 500;
+  color: #111;
+}
+.BigProfile > button {
+  width: 100px;
+  height: 30px;
+  font-size: 12pt;
+  font-weight: 300;
+  color: #eee;
+  background: #111;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+@media (pointer: coarse) {
+  #catProfile::-webkit-scrollbar {
+    display: none;
+  }
 }
