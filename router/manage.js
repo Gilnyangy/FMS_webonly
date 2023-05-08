@@ -1,5 +1,5 @@
-const express = require("express");
-const { groupInfo, getfeed, updatefeed } = require("../firebase.js");
+import express from "express";
+import { groupInfo, getfeed, updatefeed } from "../firebase.js";
 
 const router = express.Router();
 

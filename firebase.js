@@ -1,6 +1,6 @@
-const dotenv = require("dotenv");
-const { initializeApp } = require("firebase/app");
-const { getFirestore, collection, doc, getDoc, updateDoc } = require("firebase/firestore");
+import dotenv from "dotenv";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 
 dotenv.config();
 
