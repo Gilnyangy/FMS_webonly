@@ -16,8 +16,12 @@ router.get("/:group", async function (req, res) {
   }
 });
 router.get("/:group/update", async function (req, res) {
-  await updatefeed(req.params.group, req.query);
-  res.status(304).redirect(`/c/${req.params.group}`);
+  if (req.query == "") {
+    res.status(404).send("wrong");
+  } else {
+    await updatefeed(req.params.group, req.query);
+    res.status(200).redirect(`/c/${req.params.group}`);
+  }
 });
 
 export default router;

@@ -31,22 +31,22 @@
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-header text-center">내용 변경하기</div>
-        <div class="card-body">
-          <form action="/c/<%= url%>/update">
+      <form action="/c/<%= url%>/update">
+        <div class="card">
+          <div class="card-header text-center">내용 변경하기</div>
+          <div class="card-body">
             <div class="mb-3">
               <label for="dry" class="form-label">dry</label>
-              <input type="number" class="form-control" id="dry" name="dry" />
+              <input type="number" class="form-control" name="dry" value="<%= dry%>" />
             </div>
             <div class="mb-3">
               <label for="wet" class="form-label">wet</label>
-              <input type="number" class="form-control" id="wet" name="wet" />
+              <input type="number" class="form-control" name="wet" value="<%= wet%>" />
             </div>
-            <button type="submit" class="btn btn-primary" onclick="send()">Submit</button>
-          </form>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>
