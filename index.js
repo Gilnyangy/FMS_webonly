@@ -10,7 +10,6 @@ const port = process.env.SERVICE_PORT;
 app.set("view engine", "ejs");
 app.set("views", "./page");
 app.use(express.json());
-app.use(cookieParser());
 
 app.get("/", function (req, res) {
   res.status(200).send("Dev now");
