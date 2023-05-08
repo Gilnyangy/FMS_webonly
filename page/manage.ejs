@@ -4,18 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/page/style.css" />
-    <title>관리페이지 - <%= Group%></title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-reboot.min.css" />
+    <title>관리페이지 - <%= group%></title>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-    <div id="catProfile" class="demo" style="display: none">
-      <% for (var i = 0; i < cat.length; i++){ %>
-      <div class="BigProfile">
-        <img src="<%= cat[i].img%>" alt="이미지" />
-        <div><%= cat[i].name%></div>
-        <button>수정하기</button>
+    <div class="container-lg">
+      <div class="py-5">
+        <div class="row">
+          <div class="card-group">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">건식</h5>
+                <div><%= dry%></div>
+              </div>
+            </div>
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">습식</h5>
+                <div><%= wet%></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <% } %>
+      <div class="card">
+        <div class="card-header text-center">내용 변경하기</div>
+        <div class="card-body">
+          <form action="/c/<%= url%>/update">
+            <div class="mb-3">
+              <label for="dry" class="form-label">dry</label>
+              <input type="number" class="form-control" id="dry" name="dry" />
+            </div>
+            <div class="mb-3">
+              <label for="wet" class="form-label">wet</label>
+              <input type="number" class="form-control" id="wet" name="wet" />
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="send()">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

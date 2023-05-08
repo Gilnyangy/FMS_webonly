@@ -28,10 +28,14 @@ async function groupInfo(group) {
   const docSnap = await getDoc(docRef);
   return docSnap?.data();
 }
-async function feed(group) {
-  const docRef = doc(db, group, "master");
+async function getfeed(group) {
+  const docRef = doc(db, group, "feed");
   const docSnap = await getDoc(docRef);
   return docSnap?.data();
 }
+async function updatefeed(group, json) {
+  const docRef = doc(db, group, "feed");
+  await updateDoc(docRef, json);
+}
 
-export { groupInfo };
+export { groupInfo, getfeed, updatefeed };

@@ -19,8 +19,8 @@ app.get("/", function (req, res) {
 });
 
 /** Routing */
-app.use("/ico", express.static("file_icon"));
 app.use("/page", express.static("page"));
+app.use("/bootstrap", express.static("./node_modules/bootstrap/dist"));
 app.use("/c", manage);
 
 /** for Nomal Hosting setUP */
