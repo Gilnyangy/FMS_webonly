@@ -1,7 +1,6 @@
-// Import the functions you need from the SDKs you need
-import dotenv from "dotenv";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDoc, updateDoc } from "firebase/firestore";
+const dotenv = require("dotenv");
+const { initializeApp } = require("firebase/app");
+const { getFirestore, collection, doc, getDoc, updateDoc } = require("firebase/firestore");
 
 dotenv.config();
 

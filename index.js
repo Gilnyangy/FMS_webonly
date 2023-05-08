@@ -1,8 +1,6 @@
-import functions from "firebase-functions";
-import dotenv from "dotenv";
-import express from "express";
-import cookieParser from "cookie-parser";
-import manage from "./router/manage.js";
+const dotenv = require("dotenv");
+const express = require("express");
+const manage = require("./router/manage.js");
 
 dotenv.config();
 
