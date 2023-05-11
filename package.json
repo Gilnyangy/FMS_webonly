@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "description": "Feed Management Service",
   "main": "index.js",
+  "engines": {
+    "node": "18",
+    "npm": "9.x"
+  },
   "scripts": {
     "start": "node index.js"
   },
