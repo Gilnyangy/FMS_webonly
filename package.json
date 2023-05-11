@@ -4,8 +4,12 @@
   "version": "0.1.0",
   "description": "Feed Management Service",
   "main": "index.js",
+  "engines": {
+    "node": "18",
+    "npm": "9.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
